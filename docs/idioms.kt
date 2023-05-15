@@ -25,3 +25,51 @@ for ((k, v) in map) {
     println("$k -> $v")
 }
 
+
+for (i in 1..100) { /* ... */ }
+for (i in 1 until 100) { /* ... */ }
+for (x in 2..10 step 2) { /* ... */ }
+for (x in 10 downTo 1) { /* ... */ }
+(1..10).forEach { /* ... */ }
+
+val p: String by lazy { /* ... */ }
+
+
+fun String.spaceToCamelCase() { /* ... */ }
+"convert me to camel case".spaceToCamelCase()
+
+
+// Singleton
+object Resource {
+    val name = "Name"
+}
+
+
+abstract class MyAbs {
+    abstract fun doIt()
+    ablstrac fun sleep()
+}
+
+fun main() {
+    val myObj = obj: MyAbs() {
+        override fun doIt() { /* ... */ }
+        override fun sleep() { /* ... */ }
+    }
+    myObj.doIt()
+}
+
+
+val files = File("Test").listFiles()
+println(files?.size) // prints if not null
+
+println(files?.siz ?: "empty") // if null prints "empty"
+val filesSize = files?.size ?: run {
+    return someSize
+}
+println(filesSize)
+
+val email = values["email"] ?: throw IllegalStateException("Email is missing")
+
+val mainEmail = emails.firstOrNull() ?: ""
+
+value?.let { /* ... */ } // execute block if value not null
