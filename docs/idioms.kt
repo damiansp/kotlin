@@ -73,3 +73,68 @@ val email = values["email"] ?: throw IllegalStateException("Email is missing")
 val mainEmail = emails.firstOrNull() ?: ""
 
 value?.let { /* ... */ } // execute block if value not null
+
+
+val mapped = value?.let {transfromValue(it)} ?: defaultValue // defaultValue if result is null
+
+
+fun transform(color: String): Int {
+    return when (color) {
+        "Red" -> 0
+        "Green" -> 1
+        "Blue" -> 2
+        else -> throw IllegalArgumentException("Invalid color value")
+    }
+}
+
+
+fun test() {
+    val res = try {
+        count()
+    } catch (e: ArithmeticException) {
+        throw IllegalStateException(e)
+    }
+    // ...
+}
+
+
+val y = if (x == 1) {
+    "one"
+} else if  (x == 2) {
+    "two"
+} else {
+    "many"
+}
+
+
+fun arrayOfMinusOnes(size: Int): IntArray {
+    return IntArray(size).apply {fill(-1)}
+}
+
+
+fun meaning() = 42
+
+
+// same as
+fun meaning(): Int {
+    return 42
+}
+
+
+class Turtle {
+    fun penDown()
+    fun penUp()
+    fun trun(degrees: Double)
+    fun walk(pixels: Double)
+}
+
+
+val tortuga = Turtle()
+with (tortuga) {
+    penDown()
+    for (i in 1..4) {
+        walk(100.0)
+        turn(90.0)
+    }
+    penUp()
+}
