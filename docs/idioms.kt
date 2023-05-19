@@ -1,3 +1,5 @@
+//34567890//34567890//34567890//34567890//34567890//34567890//34567890//34567890
+
 data class Customer(val name: String, val email: String) { /* ... */ }
 
 fun foo(a: Int=0, b: String="") { /* ... */ }
@@ -74,8 +76,8 @@ val mainEmail = emails.firstOrNull() ?: ""
 
 value?.let { /* ... */ } // execute block if value not null
 
-
-val mapped = value?.let {transfromValue(it)} ?: defaultValue // defaultValue if result is null
+// defaultValue if result is null
+val mapped = value?.let {transfromValue(it)} ?: defaultValue
 
 
 fun transform(color: String): Int {
@@ -138,3 +140,40 @@ with (tortuga) {
     }
     penUp()
 }
+
+
+val myRect = Rectangle().apply {
+    len = 4
+    wid = 5
+    color = 0xFAFAFA
+}
+
+val stream = Files.newInputStream(Paths.get("/some/file.txt"))
+stream.buffered().reader().use {
+    reader -> println(reader.readText())
+}
+
+
+public final class Gson {
+    // ...
+    public <T> T fromJson(
+        JsonElement json, Class<T> classOfT
+    ) throws JsonSyntaxException {
+        // ...
+    }
+    // ...
+}
+
+inline fun <reified T: Any> Gson.fromJson(json: jsonElement): T =
+    this.fromJson(json T::class.java)
+
+val b: Boolean? = someAssigment()
+if (b == true) {
+    doThis()
+} else {
+    // false or null
+    doThat()
+}
+
+
+fun calcTaxes(): BigDecimal = TODO("Pending data from accounting")
