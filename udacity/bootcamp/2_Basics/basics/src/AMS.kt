@@ -8,6 +8,13 @@ fun main(args: Array<String>) {
     if (waterNeedsChanging(day)) {
         println("Change the water today!")
     }
+    var bubbles = 0
+    while (bubbles < 50) {
+        bubbles++
+    }
+    repeat(2) {
+        println("A fish is swimming")
+    }
 }
 
 
@@ -37,14 +44,51 @@ fun getFood(day: String): String {
 
 
 fun waterNeedsChanging(day: String, temp: Int=27, dirty: Int=20): Boolean {
-    return true
+    return when {
+        isTooHot(temp) -> true
+        isDirty(dirty) -> true
+        isChangeDay(day) -> true
+        else -> false
+    }
 }
 
 
+fun isTooHot(temp: Int) = temp > 30
+
+
+fun isDirty(dirty: Int) = dirty > 30
+
+
+fun isChangeDay(day: String) = day == "Sun"
+
+
+val dirty = 20
+val filterWater: (Int) -> Int = { dirty -> dirty / 2 }
+
+
+fun feedSomeFish(dirty: Int) = dirty + 10
+
+
+fun updateDirty(dirty: Int, op: (Int) -> Int): Int {
+    return op(dirty)
+}
+
+
+/*
+fun dirtyProcessor() {
+    dirty = updateDirty(dirty, filterWater)
+    dirty = updateDirty(dirty, ::feedSomeFish)
+    dirty = updateDirty(dirty) { dirty -> dirty + 50 }
+}
+ */
+
+
+/*
 fun canAddFish(
-        tankSize: Int, currentFishLengths: Array<Int>, hasDecorations: Boolean
+        tankSize: Int, currentFishLengths: List<Int>, hasDecorations: Boolean
 ): Boolean {
-    val capacity = tankSize * 0.8 if hasDecorations else tankSize
+    val capacity = if (hasDecorations) tankSize * 0.8  else tankSize
     val currentLengths = currentFishLengths.sum()
-    return currentLengths < capacity
+    return (currentLengths < capacity)
 }
+ */
