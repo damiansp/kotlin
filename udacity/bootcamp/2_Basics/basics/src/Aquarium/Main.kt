@@ -8,7 +8,9 @@ fun main(args: Array<String>) {
 fun buildAquarium() {
     val myAquarium = Aquarium()
     myAquarium.height = 80
-    println(
-        "A ${myAquarium.length}x${myAquarium.width}x${myAquarium.height}cm"
-        + " (${myAquarium.volume}L) aquarium")
+    myAquarium.print()
+    val smallAquarium = Aquarium(length=20, width=15, height=30)
+    smallAquarium.print()
+    val nineAquarium = Aquarium(nFish=9)
+    nineAquarium.print()
 }
