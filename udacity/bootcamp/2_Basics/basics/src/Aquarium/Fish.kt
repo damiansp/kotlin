@@ -26,3 +26,5 @@ fun makeExampleFish() {
         "This fish is ${if (fish.friendly) "" else " not " } friendly. "
         + "It needs ${fish.size}ccs")
 }
+
+
