@@ -2,7 +2,19 @@ package Aquarium
 
 
 fun main(args: Array<String>) {
-    val fish = Fish()
+    val symptoms: MutableList<String> = mutableListOf("white spots", "red spots", "not eating", "bloated", "belly up")
+    symptoms.add("white fungus")
+    symptoms.remove("white fungus")
+    symptoms.contains("red")
+
+    val ailments: Map<String, String> = mapOf("white spots" to "Ich", "red sores" to "hole disease")
+    println(ailments["red sores"])
+    println(ailments.getOrDefault("bloating", "don't know"))
+    ailments.getOrElse("belly up") { print("Consulting specialists for cures...") }
+
+    val inventory: MutableMap<String, Int> = mutableMapOf("fish net" to 1)
+    inventory.put("tank scrubber", 3)
+    inventory.remove("fish net")
 }
 
 
