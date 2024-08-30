@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             DieRollerTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Damian",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -33,11 +33,12 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "Hello, $name!",
         modifier = modifier
     )
 }
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
@@ -45,3 +46,4 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+*/
