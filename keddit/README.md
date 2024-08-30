@@ -1,1 +1,0 @@
-Coding along with <a href="https://medium.com/android-news/learn-kotlin-while-developing-an-android-app-introduction-567e21ff9664">this site</a>, and <a href="https://github.com/juanchosaravia/KedditBySteps">this repo</a>.
